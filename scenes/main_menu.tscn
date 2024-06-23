@@ -152,6 +152,20 @@ theme_override_font_sizes/font_size = 32
 toggle_mode = true
 text = "Return"
 
+[node name="Direct (HBoxContainer)" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Direct (HBoxContainer)"]
+layout_mode = 2
+alignment = 1
+
+[node name="Host Game (Button)" type="Button" parent="MarginContainer/Direct (HBoxContainer)/VBoxContainer"]
+layout_mode = 2
+
+[node name="Join Game (Button)" type="Button" parent="MarginContainer/Direct (HBoxContainer)/VBoxContainer"]
+layout_mode = 2
+
 [node name="Options (HBoxContainer)" type="HBoxContainer" parent="MarginContainer"]
 visible = false
 layout_mode = 2
