@@ -1,0 +1,142 @@
+[gd_scene load_steps=8 format=3 uid="uid://d135uqbwgy3jo"]
+
+[ext_resource type="Texture2D" uid="uid://raepbdnnskg5" path="res://assets/Tiny Swords (Update 010)/UI/Pointers/03.png" id="1_v7k5f"]
+[ext_resource type="Texture2D" uid="uid://copnio5p03hgr" path="res://assets/Tiny Swords (Update 010)/UI/Pointers/04.png" id="2_8vl24"]
+[ext_resource type="Texture2D" uid="uid://dbbbci56rjps1" path="res://assets/Tiny Swords (Update 010)/UI/Pointers/05.png" id="3_vjqpa"]
+[ext_resource type="Texture2D" uid="uid://ddw13hvvkavlu" path="res://assets/Tiny Swords (Update 010)/UI/Pointers/06.png" id="4_kl8xx"]
+
+[sub_resource type="Animation" id="Animation_84fwj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Points/TopLeft:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-32, -32)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Points/TopRight:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(32, -32)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Points/BottomLeft:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-32, 32)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Points/BottomRight:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(32, 32)]
+}
+
+[sub_resource type="Animation" id="Animation_yibom"]
+resource_name = "target"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Points/TopLeft:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2(-32, -32), Vector2(-24, -24), Vector2(-32, -32)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Points/TopRight:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2(32, -32), Vector2(24, -24), Vector2(32, -32)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Points/BottomLeft:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2(-32, 32), Vector2(-24, 24), Vector2(-32, 32)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Points/BottomRight:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2(32, 32), Vector2(24, 24), Vector2(32, 32)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qwnve"]
+_data = {
+"RESET": SubResource("Animation_84fwj"),
+"target": SubResource("Animation_yibom")
+}
+
+[node name="Selected" type="Node2D"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_qwnve")
+}
+autoplay = "target"
+
+[node name="Points" type="Node2D" parent="."]
+position = Vector2(0, -16)
+
+[node name="TopLeft" type="Sprite2D" parent="Points"]
+position = Vector2(-32, -32)
+texture = ExtResource("1_v7k5f")
+
+[node name="TopRight" type="Sprite2D" parent="Points"]
+position = Vector2(32, -32)
+texture = ExtResource("2_8vl24")
+
+[node name="BottomLeft" type="Sprite2D" parent="Points"]
+position = Vector2(-32, 32)
+texture = ExtResource("3_vjqpa")
+
+[node name="BottomRight" type="Sprite2D" parent="Points"]
+position = Vector2(32, 32)
+texture = ExtResource("4_kl8xx")

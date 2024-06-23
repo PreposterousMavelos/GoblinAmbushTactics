@@ -1,0 +1,270 @@
+[gd_scene load_steps=4 format=3 uid="uid://cl447akyr2rdi"]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_p52lt"]
+[ext_resource type="AudioStream" uid="uid://fxxvobungyr0" path="res://assets/Music/gaming-music-3-XtremeFreddy.ogg" id="2_2lk6c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j64px"]
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p52lt")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.4, 0.12549, 0.211765, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 16
+
+[node name="Title (VBoxContainer)" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 32
+
+[node name="Spacer (Control)" type="Control" parent="MarginContainer/Title (VBoxContainer)"]
+layout_mode = 2
+
+[node name="Title (Label)" type="Label" parent="MarginContainer/Title (VBoxContainer)"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 6
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 64
+text = "Goblin Ambush Tactics!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Subtitle (VBoxContainer)" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+alignment = 2
+
+[node name="Label" type="Label" parent="MarginContainer/Subtitle (VBoxContainer)"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 24
+text = "Preposterous Games"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer (Control)" type="Control" parent="MarginContainer/Subtitle (VBoxContainer)"]
+layout_mode = 2
+
+[node name="Menu (HBoxContainer)" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Menu (HBoxContainer)"]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="PlayOnline (Button)" type="Button" parent="MarginContainer/Menu (HBoxContainer)/VBoxContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 32
+text = "Play Online"
+
+[node name="Tutorial (Button)" type="Button" parent="MarginContainer/Menu (HBoxContainer)/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 32
+text = "Tutorial"
+
+[node name="Options (Button)" type="Button" parent="MarginContainer/Menu (HBoxContainer)/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 32
+text = "Options"
+
+[node name="Quit (Button)" type="Button" parent="MarginContainer/Menu (HBoxContainer)/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 32
+toggle_mode = true
+text = "Quit"
+
+[node name="Online (HBoxContainer)" type="HBoxContainer" parent="MarginContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Online (HBoxContainer)"]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="Ranked (Button)" type="Button" parent="MarginContainer/Online (HBoxContainer)/VBoxContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 32
+text = "Ranked Match"
+
+[node name="Unranked (Button)" type="Button" parent="MarginContainer/Online (HBoxContainer)/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 32
+text = "Unranked Match"
+
+[node name="Direct (Button)" type="Button" parent="MarginContainer/Online (HBoxContainer)/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 32
+text = "Direct Match"
+
+[node name="Return (Button)" type="Button" parent="MarginContainer/Online (HBoxContainer)/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 32
+toggle_mode = true
+text = "Return"
+
+[node name="Options (HBoxContainer)" type="HBoxContainer" parent="MarginContainer"]
+visible = false
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Options (HBoxContainer)"]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="Display (OptionButton)" type="OptionButton" parent="MarginContainer/Options (HBoxContainer)/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_j64px")
+alignment = 1
+icon_alignment = 1
+item_count = 2
+selected = 0
+popup/item_0/text = "Fullscreen"
+popup/item_0/id = 0
+popup/item_1/text = "Windowed"
+popup/item_1/id = 1
+
+[node name="Label" type="Label" parent="MarginContainer/Options (HBoxContainer)/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 32
+text = "Master Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Volume (Slider)" type="HSlider" parent="MarginContainer/Options (HBoxContainer)/VBoxContainer"]
+custom_minimum_size = Vector2(400, 20)
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+value = 0.25
+
+[node name="Label2" type="Label" parent="MarginContainer/Options (HBoxContainer)/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 32
+text = "Music Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Volume (Slider)2" type="HSlider" parent="MarginContainer/Options (HBoxContainer)/VBoxContainer"]
+custom_minimum_size = Vector2(400, 20)
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+value = 1.0
+
+[node name="Label3" type="Label" parent="MarginContainer/Options (HBoxContainer)/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 32
+text = "SFX Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Volume (Slider)3" type="HSlider" parent="MarginContainer/Options (HBoxContainer)/VBoxContainer"]
+custom_minimum_size = Vector2(400, 20)
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+value = 1.0
+
+[node name="Return (Button)" type="Button" parent="MarginContainer/Options (HBoxContainer)/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 32
+toggle_mode = true
+text = "Return"
+
+[node name="TBD (HBoxContainer)" type="HBoxContainer" parent="MarginContainer"]
+visible = false
+layout_mode = 2
+alignment = 1
+
+[node name="TBD (Label)" type="Label" parent="MarginContainer/TBD (HBoxContainer)"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 32
+text = "In Development"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_2lk6c")
+autoplay = true
+bus = &"Music"
+
+[connection signal="button_up" from="MarginContainer/Menu (HBoxContainer)/VBoxContainer/PlayOnline (Button)" to="." method="_on_play_online_button_button_up"]
+[connection signal="button_up" from="MarginContainer/Menu (HBoxContainer)/VBoxContainer/Tutorial (Button)" to="." method="_on_tutorial_button_button_up"]
+[connection signal="button_up" from="MarginContainer/Menu (HBoxContainer)/VBoxContainer/Options (Button)" to="." method="_on_options_button_button_up"]
+[connection signal="button_up" from="MarginContainer/Menu (HBoxContainer)/VBoxContainer/Quit (Button)" to="." method="_on_quit_button_button_up"]
+[connection signal="button_up" from="MarginContainer/Online (HBoxContainer)/VBoxContainer/Ranked (Button)" to="." method="_on_ranked_button_button_up"]
+[connection signal="button_up" from="MarginContainer/Online (HBoxContainer)/VBoxContainer/Unranked (Button)" to="." method="_on_unranked_button_button_up"]
+[connection signal="button_up" from="MarginContainer/Online (HBoxContainer)/VBoxContainer/Direct (Button)" to="." method="_on_direct_button_button_up"]
+[connection signal="button_up" from="MarginContainer/Online (HBoxContainer)/VBoxContainer/Return (Button)" to="." method="_on_return_button_button_up"]
+[connection signal="item_selected" from="MarginContainer/Options (HBoxContainer)/VBoxContainer/Display (OptionButton)" to="." method="_on_display_option_button_item_selected"]
+[connection signal="value_changed" from="MarginContainer/Options (HBoxContainer)/VBoxContainer/Volume (Slider)" to="." method="_on_volume_slider_value_changed" binds= [0]]
+[connection signal="value_changed" from="MarginContainer/Options (HBoxContainer)/VBoxContainer/Volume (Slider)2" to="." method="_on_volume_slider_value_changed" binds= [1]]
+[connection signal="value_changed" from="MarginContainer/Options (HBoxContainer)/VBoxContainer/Volume (Slider)3" to="." method="_on_volume_slider_value_changed" binds= [2]]
+[connection signal="button_up" from="MarginContainer/Options (HBoxContainer)/VBoxContainer/Return (Button)" to="." method="_on_return_button_button_up"]

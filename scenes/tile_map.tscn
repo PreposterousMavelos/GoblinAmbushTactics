@@ -1,0 +1,305 @@
+[gd_scene load_steps=28 format=3 uid="uid://caw2x2jet7c1l"]
+
+[ext_resource type="Texture2D" uid="uid://fxlxk21qxoht" path="res://assets/Tiny Swords (Update 010)/Terrain/Ground/Tilemap_Flat.png" id="1_83f4g"]
+[ext_resource type="Texture2D" uid="uid://blqexv7sh3wrv" path="res://assets/Tiny Swords (Update 010)/Terrain/Ground/Tilemap_Elevation.png" id="2_esiku"]
+[ext_resource type="Texture2D" uid="uid://bekoaxiuff6ad" path="res://assets/Tiny Swords (Update 010)/Terrain/Water/Foam/Foam.png" id="3_3ia25"]
+[ext_resource type="Texture2D" uid="uid://4gm4sa840337" path="res://assets/Tiny Swords (Update 010)/Terrain/Water/Water.png" id="3_vt3xd"]
+[ext_resource type="Texture2D" uid="uid://gwxw4lwq3exy" path="res://assets/Tiny Swords (Update 010)/Terrain/Ground/Bridge_All.png" id="4_xanej"]
+[ext_resource type="Texture2D" uid="uid://x70jnp5dcvqn" path="res://assets/Tiny Swords (Update 010)/Terrain/Ground/Shadows.png" id="5_a0hdk"]
+[ext_resource type="Texture2D" uid="uid://bm0v3680wkd2u" path="res://assets/Tiny Swords (Update 010)/Resources/Trees/Tree.png" id="6_ycot4"]
+[ext_resource type="Texture2D" uid="uid://cscmib14o2yog" path="res://assets/Tiny Swords (Update 010)/Terrain/Water/Rocks/Rocks_01.png" id="7_syppp"]
+[ext_resource type="Texture2D" uid="uid://4evg0mtopooy" path="res://assets/Tiny Swords (Update 010)/Factions/Goblins/Buildings/Wood_Tower/Wood_Tower_Blue.png" id="8_22tpg"]
+[ext_resource type="PackedScene" uid="uid://dde8tcjp8lgq1" path="res://scenes/characters/humans/blue_knight.tscn" id="9_ssqnx"]
+[ext_resource type="PackedScene" uid="uid://d135uqbwgy3jo" path="res://scenes/selected.tscn" id="11_0mntv"]
+[ext_resource type="Texture2D" uid="uid://dnfcie827ubpt" path="res://assets/Tiny Swords (Update 010)/Factions/Knights/Troops/Warrior/Blue/Warrior_Blue.png" id="12_6oggc"]
+[ext_resource type="PackedScene" uid="uid://cbhvr8mf1b7ln" path="res://scenes/characters/goblins/red_torcher.tscn" id="12_gl62s"]
+[ext_resource type="Texture2D" uid="uid://er6802pwb8de" path="res://assets/Tiny Swords (Update 010)/Factions/Knights/Troops/Warrior/Purple/Warrior_Purple.png" id="13_0fuuy"]
+[ext_resource type="Texture2D" uid="uid://bf2l20uvdalq5" path="res://assets/Tiny Swords (Update 010)/Factions/Knights/Troops/Warrior/Red/Warrior_Red.png" id="14_5o3p6"]
+[ext_resource type="PackedScene" uid="uid://d1s573gl1l0q7" path="res://scenes/health.tscn" id="14_c02cv"]
+[ext_resource type="Texture2D" uid="uid://da7s5u6f4drj1" path="res://assets/Tiny Swords (Update 010)/Factions/Knights/Troops/Warrior/Yellow/Warrior_Yellow.png" id="15_pd6d3"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i726q"]
+texture = ExtResource("1_83f4g")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+3:3/0 = 0
+2:3/0 = 0
+1:3/0 = 0
+0:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+8:2/0 = 0
+7:2/0 = 0
+6:2/0 = 0
+5:2/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+8:0/0 = 0
+7:0/0 = 0
+6:0/0 = 0
+5:0/0 = 0
+9:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0rig6"]
+texture = ExtResource("3_3ia25")
+texture_region_size = Vector2i(64, 64)
+0:0/size_in_atlas = Vector2i(3, 3)
+0:0/animation_frame_0/duration = 0.1
+0:0/animation_frame_1/duration = 0.1
+0:0/animation_frame_2/duration = 0.1
+0:0/animation_frame_3/duration = 0.1
+0:0/animation_frame_4/duration = 0.1
+0:0/animation_frame_5/duration = 0.1
+0:0/animation_frame_6/duration = 0.1
+0:0/animation_frame_7/duration = 0.1
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sno0e"]
+texture = ExtResource("2_esiku")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+3:1/0 = 0
+2:1/0 = 0
+1:1/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+3:3/0 = 0
+2:3/0 = 0
+1:3/0 = 0
+0:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+3:5/0 = 0
+2:5/0 = 0
+1:5/0 = 0
+0:5/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vekof"]
+texture = ExtResource("4_xanej")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+2:1/0 = 0
+1:1/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+0:3/0 = 0
+2:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2yhb8"]
+texture = ExtResource("5_a0hdk")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xsoh7"]
+texture = ExtResource("6_ycot4")
+texture_region_size = Vector2i(64, 64)
+0:0/size_in_atlas = Vector2i(3, 3)
+0:0/animation_separation = Vector2i(0, 3)
+0:0/animation_frame_0/duration = 0.1
+0:0/animation_frame_1/duration = 0.1
+0:0/animation_frame_2/duration = 0.1
+0:0/animation_frame_3/duration = 0.1
+0:0/0 = 0
+0:0/0/custom_data_0 = true
+0:3/size_in_atlas = Vector2i(3, 3)
+0:3/animation_frame_0/duration = 0.1
+0:3/animation_frame_1/duration = 0.1
+0:3/0 = 0
+0:3/0/custom_data_0 = true
+0:6/size_in_atlas = Vector2i(3, 3)
+0:6/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pbhwd"]
+texture = ExtResource("7_syppp")
+texture_region_size = Vector2i(64, 64)
+0:0/size_in_atlas = Vector2i(2, 2)
+0:0/animation_frame_0/duration = 0.1
+0:0/animation_frame_1/duration = 0.1
+0:0/animation_frame_2/duration = 0.1
+0:0/animation_frame_3/duration = 0.1
+0:0/animation_frame_4/duration = 0.1
+0:0/animation_frame_5/duration = 0.1
+0:0/animation_frame_6/duration = 0.1
+0:0/animation_frame_7/duration = 0.1
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bj3q7"]
+texture = ExtResource("8_22tpg")
+texture_region_size = Vector2i(64, 64)
+0:0/size_in_atlas = Vector2i(4, 3)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_2rckr"]
+tile_size = Vector2i(64, 64)
+custom_data_layer_0/name = "obstacle"
+custom_data_layer_0/type = 1
+sources/0 = SubResource("TileSetAtlasSource_i726q")
+sources/1 = SubResource("TileSetAtlasSource_0rig6")
+sources/2 = SubResource("TileSetAtlasSource_sno0e")
+sources/3 = SubResource("TileSetAtlasSource_vekof")
+sources/4 = SubResource("TileSetAtlasSource_2yhb8")
+sources/5 = SubResource("TileSetAtlasSource_xsoh7")
+sources/6 = SubResource("TileSetAtlasSource_pbhwd")
+sources/7 = SubResource("TileSetAtlasSource_bj3q7")
+
+[sub_resource type="GDScript" id="GDScript_o4ymc"]
+resource_name = "unit"
+script/source = "extends CharacterBody2D
+
+@onready var tile_map = $\"..\"
+
+@export var colors : Array[CompressedTexture2D] 
+
+var enemy = preload(\"res://scenes/characters/goblins/yellow_torcher.tscn\")
+
+var astar_grid : AStarGrid2D
+var id_path : Array[Vector2i]
+var current_id_path : Array[Vector2i]
+var target_position : Vector2
+var is_moving : bool
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	print(get_path())
+	var rng = RandomNumberGenerator.new()
+	$Sprite2D.texture = colors[rng.randi_range(0,3)]
+	astar_grid = AStarGrid2D.new()
+	astar_grid.region = tile_map.get_used_rect()
+	astar_grid.cell_size = Vector2(64, 64)
+	astar_grid.diagonal_mode = AStarGrid2D.DIAGONAL_MODE_NEVER
+	astar_grid.update()
+	print(tile_map.get_used_rect())
+	for x in tile_map.get_used_rect().size.x:
+		for y in tile_map.get_used_rect().size.y:
+			var tile_position = Vector2i(
+				x + tile_map.get_used_rect().position.x,
+				y + tile_map.get_used_rect().position.y
+			)
+			
+			var tile_data = tile_map.get_cell_tile_data(3, tile_position)
+			if tile_data == null:
+				continue
+			if tile_data.get_custom_data(\"obstacle\") == true:
+				print(\"found one\")
+				astar_grid.set_point_solid(tile_position)
+	
+func _input(event):
+	if event.is_action_pressed(\"move\") == false:
+		return
+	
+	if is_moving:
+		id_path = astar_grid.get_id_path(
+			tile_map.local_to_map(target_position),
+			tile_map.local_to_map(get_global_mouse_position())
+		)
+	else:
+		id_path = astar_grid.get_id_path(
+			tile_map.local_to_map(global_position),
+			tile_map.local_to_map(get_global_mouse_position())
+		).slice(1)
+	
+	if id_path.is_empty() == false:
+		current_id_path = id_path
+	
+	print(id_path)
+
+
+func _physics_process(delta):
+	if current_id_path.is_empty():
+		return
+	
+	if is_moving == false:
+		target_position = tile_map.map_to_local(current_id_path.front())
+		is_moving = true
+		print(is_moving)
+	
+	global_position = global_position.move_toward(target_position, 3)
+	
+	if global_position == target_position:
+		current_id_path.pop_front()
+		
+		if current_id_path.is_empty() == false:
+			target_position = tile_map.map_to_local(current_id_path.front())
+		else:
+			is_moving = false
+"
+
+[node name="TileMap" type="TileMap"]
+tile_set = SubResource("TileSet_2rckr")
+format = 2
+layer_0/name = "Water"
+layer_0/tile_data = PackedInt32Array(196615, 1, 0, 196616, 1, 0, 196617, 1, 0, 196618, 1, 0, 196619, 1, 0, 196620, 1, 0, 196621, 1, 0, 196622, 1, 0, 196623, 1, 0, 196624, 1, 0, 196625, 1, 0, 196626, 1, 0, 196627, 1, 0, 196628, 1, 0, 851988, 1, 0, 851987, 1, 0, 851986, 1, 0, 851985, 1, 0, 851984, 1, 0, 851983, 1, 0, 851982, 1, 0, 851981, 1, 0, 851980, 1, 0, 851979, 1, 0, 851978, 1, 0, 851977, 1, 0, 851976, 1, 0, 851975, 1, 0, 262151, 1, 0, 327687, 1, 0, 393223, 1, 0, 458759, 1, 0, 524295, 1, 0, 589831, 1, 0, 655367, 1, 0, 720903, 1, 0, 786439, 1, 0, 196629, 1, 0, 196630, 1, 0, 262166, 1, 0, 327702, 1, 0, 393238, 1, 0, 458774, 1, 0, 524310, 1, 0, 589846, 1, 0, 655382, 1, 0, 720918, 1, 0, 786454, 1, 0, 851990, 1, 0, 851989, 1, 0, 0, 196608, 3, 983069, 196608, 3)
+layer_1/name = "Ground"
+layer_1/tile_data = PackedInt32Array(196615, 0, 0, 262151, 0, 1, 786439, 0, 1, 851975, 0, 2, 786453, 65536, 1, 851989, 65536, 2, 196629, 65536, 0, 262165, 65536, 1, 196616, 65536, 0, 196617, 65536, 0, 196618, 65536, 0, 196619, 65536, 0, 196620, 65536, 0, 196621, 65536, 0, 196622, 65536, 0, 196623, 65536, 0, 196624, 65536, 0, 196625, 65536, 0, 196626, 65536, 0, 196627, 65536, 0, 196628, 65536, 0, 851976, 65536, 2, 851977, 65536, 2, 851978, 65536, 2, 851979, 65536, 2, 851980, 65536, 2, 851981, 65536, 2, 851982, 65536, 2, 851983, 65536, 2, 851984, 65536, 2, 851985, 65536, 2, 851986, 65536, 2, 851987, 65536, 2, 851988, 65536, 2, 720903, 0, 1, 655367, 0, 1, 589831, 0, 1, 524295, 0, 1, 458759, 0, 1, 393223, 0, 1, 327687, 0, 1, 327701, 65536, 1, 393237, 65536, 1, 458773, 65536, 1, 524309, 65536, 1, 589845, 65536, 1, 655381, 65536, 1, 720917, 65536, 1, 589835, 65536, 1, 524299, 65536, 1, 458763, 65536, 1, 393227, 65536, 1, 327691, 65536, 1, 262155, 65536, 1, 262154, 65536, 1, 262153, 65536, 1, 262152, 65536, 1, 327688, 65536, 1, 393224, 65536, 1, 458760, 65536, 1, 524296, 65536, 1, 589832, 65536, 1, 655368, 65536, 1, 720904, 65536, 1, 786440, 65536, 1, 786441, 65536, 1, 720905, 65536, 1, 655369, 65536, 1, 589833, 65536, 1, 524297, 65536, 1, 458761, 65536, 1, 393225, 65536, 1, 327689, 65536, 1, 327690, 65536, 1, 393226, 65536, 1, 458762, 65536, 1, 524298, 65536, 1, 589834, 65536, 1, 655370, 65536, 1, 720906, 65536, 1, 786442, 65536, 1, 786443, 65536, 1, 720907, 65536, 1, 655371, 65536, 1, 655372, 65536, 1, 589836, 65536, 1, 524300, 65536, 1, 458764, 65536, 1, 393228, 65536, 1, 327692, 65536, 1, 262156, 65536, 1, 262157, 65536, 1, 327693, 65536, 1, 393229, 65536, 1, 458765, 65536, 1, 524301, 65536, 1, 589837, 65536, 1, 655373, 65536, 1, 720909, 65536, 1, 720908, 65536, 1, 786444, 65536, 1, 786445, 65536, 1, 786446, 65536, 1, 720910, 65536, 1, 655374, 65536, 1, 589838, 65536, 1, 524302, 65536, 1, 458766, 65536, 1, 393230, 65536, 1, 327694, 65536, 1, 262158, 65536, 1, 262159, 65536, 1, 327695, 65536, 1, 393231, 65536, 1, 458767, 65536, 1, 524303, 65536, 1, 589839, 65536, 1, 655375, 65536, 1, 720911, 65536, 1, 786447, 65536, 1, 786448, 65536, 1, 720912, 65536, 1, 655376, 65536, 1, 589840, 65536, 1, 524304, 65536, 1, 458768, 65536, 1, 393232, 65536, 1, 327696, 65536, 1, 262160, 65536, 1, 262161, 65536, 1, 327697, 65536, 1, 393233, 65536, 1, 458769, 65536, 1, 524305, 65536, 1, 589841, 65536, 1, 655377, 65536, 1, 720913, 65536, 1, 786449, 65536, 1, 786450, 65536, 1, 720914, 65536, 1, 655378, 65536, 1, 589842, 65536, 1, 524306, 65536, 1, 458770, 65536, 1, 393234, 65536, 1, 327698, 65536, 1, 262162, 65536, 1, 262163, 65536, 1, 327699, 65536, 1, 393235, 65536, 1, 458771, 65536, 1, 524307, 65536, 1, 589843, 65536, 1, 655379, 65536, 1, 720915, 65536, 1, 786451, 65536, 1, 786452, 65536, 1, 720916, 65536, 1, 655380, 65536, 1, 589844, 65536, 1, 524308, 65536, 1, 458772, 65536, 1, 393236, 65536, 1, 327700, 65536, 1, 262164, 65536, 1, 851990, 131072, 2, 196630, 131072, 0, 262166, 131072, 1, 327702, 131072, 1, 393238, 131072, 1, 458774, 131072, 1, 524310, 131072, 1, 589846, 131072, 1, 655382, 131072, 1, 720918, 131072, 1, 786454, 131072, 1)
+layer_2/name = "Ground Shadow"
+layer_2/tile_data = PackedInt32Array()
+layer_3/name = "Elevation"
+layer_3/tile_data = PackedInt32Array(655371, 5, 0, 327697, 5, 0, 524306, 2, 0, 589842, 196610, 2, 655378, 196610, 3, 524308, 131074, 0, 589844, 196610, 2, 655380, 196610, 3, 524307, 65538, 0, 655379, 196610, 7, 589843, 196610, 7)
+layer_4/name = "Elevated Ground"
+layer_4/tile_data = PackedInt32Array()
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -1
+z_as_relative = false
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("3_vt3xd")
+
+[node name="RedTorcher" parent="." instance=ExtResource("12_gl62s")]
+position = Vector2(992, 736)
+
+[node name="BlueKnight" parent="." instance=ExtResource("9_ssqnx")]
+position = Vector2(864, 736)
+script = SubResource("GDScript_o4ymc")
+colors = Array[CompressedTexture2D]([ExtResource("12_6oggc"), ExtResource("13_0fuuy"), ExtResource("14_5o3p6"), ExtResource("15_pd6d3")])
+
+[node name="Selected" parent="." instance=ExtResource("11_0mntv")]
+position = Vector2(864, 736)
+
+[node name="Selected2" parent="." instance=ExtResource("11_0mntv")]
+position = Vector2(992, 736)
+
+[node name="Health" parent="." instance=ExtResource("14_c02cv")]
+position = Vector2(864, 672)
+
+[node name="Node2D" type="Node2D" parent="."]
