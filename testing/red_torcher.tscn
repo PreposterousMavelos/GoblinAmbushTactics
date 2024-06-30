@@ -117,6 +117,7 @@ _data = {
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -16)
 texture = ExtResource("1_nxi18")
+flip_h = true
 hframes = 7
 vframes = 5
 

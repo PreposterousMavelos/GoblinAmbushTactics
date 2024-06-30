@@ -1,9 +1,79 @@
-[gd_scene load_steps=4 format=3 uid="uid://cl447akyr2rdi"]
+[gd_scene load_steps=14 format=3 uid="uid://cl447akyr2rdi"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_p52lt"]
 [ext_resource type="AudioStream" uid="uid://fxxvobungyr0" path="res://assets/Music/gaming-music-3-XtremeFreddy.ogg" id="2_2lk6c"]
+[ext_resource type="Texture2D" uid="uid://4gm4sa840337" path="res://assets/Tiny Swords (Update 010)/Terrain/Water/Water.png" id="2_mnv6i"]
+[ext_resource type="PackedScene" uid="uid://dde8tcjp8lgq1" path="res://scenes/characters/humans/knight.tscn" id="4_bwhsl"]
+[ext_resource type="Texture2D" uid="uid://fxlxk21qxoht" path="res://assets/Tiny Swords (Update 010)/Terrain/Ground/Tilemap_Flat.png" id="4_vbfhg"]
+[ext_resource type="PackedScene" uid="uid://cbhvr8mf1b7ln" path="res://testing/red_torcher.tscn" id="5_0c4pj"]
+[ext_resource type="Texture2D" uid="uid://dpeukxwq4hrjd" path="res://assets/Tiny Swords (Update 010)/Factions/Goblins/Buildings/Wood_Tower/Wood_Tower_Red.png" id="5_gxthh"]
+[ext_resource type="Texture2D" uid="uid://dp84tpalbjrdk" path="res://assets/Tiny Swords (Update 010)/Factions/Knights/Buildings/Tower/Tower_Blue.png" id="6_2n2mg"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j64px"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g68dc"]
+texture = ExtResource("4_vbfhg")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+3:1/0 = 0
+3:2/0 = 0
+3:3/0 = 0
+2:3/0 = 0
+2:2/0 = 0
+2:1/0 = 0
+1:1/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+1:3/0 = 0
+0:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+8:2/0 = 0
+8:1/0 = 0
+8:0/0 = 0
+4:0/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+6:2/0 = 0
+5:2/0 = 0
+7:2/0 = 0
+7:1/0 = 0
+7:0/0 = 0
+6:0/0 = 0
+5:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uf25r"]
+texture = ExtResource("5_gxthh")
+texture_region_size = Vector2i(256, 192)
+0:0/animation_frame_0/duration = 0.1
+0:0/animation_frame_1/duration = 0.1
+0:0/animation_frame_2/duration = 0.1
+0:0/animation_frame_3/duration = 0.1
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_erl0x"]
+texture = ExtResource("6_2n2mg")
+texture_region_size = Vector2i(64, 64)
+0:3/0 = 0
+1:3/0 = 0
+1:2/0 = 0
+0:2/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+1:0/0 = 0
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_sgxrj"]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_g68dc")
+sources/4 = SubResource("TileSetAtlasSource_uf25r")
+sources/6 = SubResource("TileSetAtlasSource_erl0x")
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
@@ -15,6 +85,7 @@ grow_vertical = 2
 script = ExtResource("1_p52lt")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -22,6 +93,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.4, 0.12549, 0.211765, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_mnv6i")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -153,18 +230,36 @@ toggle_mode = true
 text = "Return"
 
 [node name="Direct (HBoxContainer)" type="HBoxContainer" parent="MarginContainer"]
+visible = false
 layout_mode = 2
 alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Direct (HBoxContainer)"]
 layout_mode = 2
+theme_override_constants/separation = 16
 alignment = 1
 
 [node name="Host Game (Button)" type="Button" parent="MarginContainer/Direct (HBoxContainer)/VBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 32
+text = "Host Game"
 
 [node name="Join Game (Button)" type="Button" parent="MarginContainer/Direct (HBoxContainer)/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 32
+text = "Join Game"
+
+[node name="Return (Button)" type="Button" parent="MarginContainer/Direct (HBoxContainer)/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 32
+text = "Return"
 
 [node name="Options (HBoxContainer)" type="HBoxContainer" parent="MarginContainer"]
 visible = false
@@ -269,6 +364,17 @@ stream = ExtResource("2_2lk6c")
 autoplay = true
 bus = &"Music"
 
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_sgxrj")
+format = 2
+layer_0/tile_data = PackedInt32Array(655383, 4, 0)
+
+[node name="BlueKnight" parent="." instance=ExtResource("4_bwhsl")]
+position = Vector2(416, 608)
+
+[node name="RedTorcher" parent="." instance=ExtResource("5_0c4pj")]
+position = Vector2(1504, 608)
+
 [connection signal="button_up" from="MarginContainer/Menu (HBoxContainer)/VBoxContainer/PlayOnline (Button)" to="." method="_on_play_online_button_button_up"]
 [connection signal="button_up" from="MarginContainer/Menu (HBoxContainer)/VBoxContainer/Tutorial (Button)" to="." method="_on_tutorial_button_button_up"]
 [connection signal="button_up" from="MarginContainer/Menu (HBoxContainer)/VBoxContainer/Options (Button)" to="." method="_on_options_button_button_up"]
@@ -277,6 +383,7 @@ bus = &"Music"
 [connection signal="button_up" from="MarginContainer/Online (HBoxContainer)/VBoxContainer/Unranked (Button)" to="." method="_on_unranked_button_button_up"]
 [connection signal="button_up" from="MarginContainer/Online (HBoxContainer)/VBoxContainer/Direct (Button)" to="." method="_on_direct_button_button_up"]
 [connection signal="button_up" from="MarginContainer/Online (HBoxContainer)/VBoxContainer/Return (Button)" to="." method="_on_return_button_button_up"]
+[connection signal="button_up" from="MarginContainer/Direct (HBoxContainer)/VBoxContainer/Return (Button)" to="." method="_on_direct_return_button_button_up"]
 [connection signal="item_selected" from="MarginContainer/Options (HBoxContainer)/VBoxContainer/Display (OptionButton)" to="." method="_on_display_option_button_item_selected"]
 [connection signal="value_changed" from="MarginContainer/Options (HBoxContainer)/VBoxContainer/Volume (Slider)" to="." method="_on_volume_slider_value_changed" binds= [0]]
 [connection signal="value_changed" from="MarginContainer/Options (HBoxContainer)/VBoxContainer/Volume (Slider)2" to="." method="_on_volume_slider_value_changed" binds= [1]]

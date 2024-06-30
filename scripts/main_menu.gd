@@ -1,22 +1,26 @@
 extends Control
 
+# Main Menu
 @onready var quit__button_ = $"MarginContainer/Menu (HBoxContainer)/VBoxContainer/Quit (Button)"
 @onready var menu__h_box_container_ = $"MarginContainer/Menu (HBoxContainer)"
+# Options Menu
 @onready var options__h_box_container_ = $"MarginContainer/Options (HBoxContainer)"
 @onready var return__button_ = $"MarginContainer/Options (HBoxContainer)/VBoxContainer/Return (Button)"
+# Online Menu
 @onready var online__h_box_container_ = $"MarginContainer/Online (HBoxContainer)"
 @onready var online_return__button_ = $"MarginContainer/Online (HBoxContainer)/VBoxContainer/Return (Button)"
+# Direct Menu
+@onready var direct__h_box_container_ = $"MarginContainer/Direct (HBoxContainer)"
+@onready var direct_return__button_ = $"MarginContainer/Direct (HBoxContainer)/VBoxContainer/Return (Button)"
+# TBD / Placeholder
 @onready var tbd__h_box_container_ = $"MarginContainer/TBD (HBoxContainer)"
 @onready var tbd__label_ = $"MarginContainer/TBD (HBoxContainer)/TBD (Label)"
 
-var menu_level : int = 0 # main = 0, options = 1, online = 2, tbd = 5
+var menu_level : int = 0 # main = 0, options = 1, online = 2, direct = 3, tbd = 5
 var last_level : int = 0 # for tbd toggling
 
 func _ready():
-	_on_volume_slider_value_changed(0.25, 0)
-
-func _process(delta):
-	pass
+	_on_volume_slider_value_changed(0.25, 0) # initial volume 25%
 	
 func _input(event):
 	# Escape is held down
@@ -28,6 +32,8 @@ func _input(event):
 				return__button_.button_pressed = true
 			2: # online choices
 				online_return__button_.button_pressed = true
+			3: # direct choices
+				direct_return__button_.button_pressed = true
 	# Escape is released
 	if event.is_action_released("escape"):
 		match menu_level:
@@ -37,14 +43,15 @@ func _input(event):
 				return_to_menu()
 			2: # online choices
 				return_to_menu()
+			3: # direct choices
+				return_to_online()
 			5: # tbd message
+				tbd__h_box_container_.visible = false
 				match last_level:
 					0:
-						tbd__h_box_container_.visible = false
 						menu__h_box_container_.visible = true
 						menu_level = 0
 					2:
-						tbd__h_box_container_.visible = false
 						online__h_box_container_.visible = true
 						menu_level = 2
 
@@ -56,6 +63,12 @@ func return_to_menu():
 	menu_level = 0
 	return__button_.toggle_mode = false
 	online_return__button_.toggle_mode = false
+	
+func return_to_online():
+	direct__h_box_container_.visible = false
+	online__h_box_container_.visible = true
+	menu_level = 2
+	direct_return__button_.toggle_mode = false
 
 # Play Online button pressed
 func _on_play_online_button_button_up():
@@ -76,8 +89,12 @@ func _on_unranked_button_button_up():
 
 # Direct button pressed
 func _on_direct_button_button_up():
-	tbd__label_.text = "Direct mode is in development.\nPress ESC to return."
-	toggle_tbd(2)
+	#tbd__label_.text = "Direct mode is in development.\nPress ESC to return."
+	#toggle_tbd(2)
+	online__h_box_container_.visible = false
+	direct__h_box_container_.visible = true
+	menu_level = 3
+	direct_return__button_.toggle_mode = true
 
 # Tutorial button pressed
 func _on_tutorial_button_button_up():
@@ -118,3 +135,6 @@ func _on_volume_slider_value_changed(value, index):
 func _on_display_option_button_item_selected(index):
 	#0 = Fullscreen, 1 = Windowed Fullscreen
 	DisplayServer.window_set_mode(4-index*2)
+
+func _on_direct_return_button_button_up():
+	return_to_online()

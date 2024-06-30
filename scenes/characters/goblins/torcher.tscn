@@ -112,7 +112,7 @@ _data = {
 "run": SubResource("Animation_n03b4")
 }
 
-[node name="BlueTorcher" type="CharacterBody2D"]
+[node name="Torcher" type="CharacterBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -16)
